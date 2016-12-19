@@ -14,5 +14,13 @@
     "jest-util": "^18.0.0",
     "yargs": "^6.5.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndelangen/jest-observer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ndelangen/jest-observer/issues"
+  },
+  "homepage": "https://github.com/ndelangen/jest-observer#readme",
   "main": "src/jest-record.js"
 }
