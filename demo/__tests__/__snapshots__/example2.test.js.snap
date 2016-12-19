@@ -1,0 +1,5 @@
+exports[`example 2 should do some snapshots 1`] = `
+Object {
+  "unittestObject": true,
+}
+`;

@@ -1,0 +1,16 @@
+{
+  "name": "jest-observer-demo",
+  "version": "1.0.0",
+  "description": "Demo for jest-observer package",
+  "scripts": {
+    "test": "jest -c .jestrc",
+    "start": "./.scripts/start.js",
+    "preinstall": "npm ln mylib ../"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "jest-cli": "^18.0.0"
+  }
+}
