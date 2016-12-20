@@ -24,4 +24,6 @@ module.exports = (options, callback) => {
   });
 
   child.on('message', callback);
+
+  return child;
 };
