@@ -1,0 +1,9 @@
+[2J[3J[HNo tests found related to files changed since last commit.
+Press `a` to run all tests, or run Jest with `--watchAll`.
+
+Watch Usage
+ › Press a to run all tests.
+ › Press o to only run tests related to changed files.
+ › Press p to filter by a filename regex pattern.
+ › Press q to quit watch mode.
+ › Press Enter to trigger a test run.

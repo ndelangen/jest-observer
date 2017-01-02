@@ -2,16 +2,23 @@
   "name": "jest-observer",
   "version": "1.0.0",
   "description": "running jest in watch-mode within a system and record the test-output",
-  "main": "index.js",
-  "scripts": {
-  },
-  "keywords": ["jest", "observe", "watch", "test", "results", "observer"],
+  "main": "src/jest-record.js",
+  "scripts": {},
+  "keywords": [
+    "jest",
+    "observe",
+    "watch",
+    "test",
+    "results",
+    "observer"
+  ],
   "author": "Norbert de Langen",
   "license": "MIT",
   "dependencies": {
     "babel-jest": "^18.0.0",
     "jest-cli": "^18.0.0",
     "jest-util": "^18.0.0",
+    "pty.js": "^0.3.1",
     "yargs": "^6.5.0"
   },
   "repository": {
@@ -21,6 +28,5 @@
   "bugs": {
     "url": "https://github.com/ndelangen/jest-observer/issues"
   },
-  "homepage": "https://github.com/ndelangen/jest-observer#readme",
-  "main": "src/jest-record.js"
+  "homepage": "https://github.com/ndelangen/jest-observer#readme"
 }

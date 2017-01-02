@@ -4,26 +4,38 @@
 
 const fs = require('fs');
 const path = require('path');
-const fork = require('child_process').fork;
+const pty = require('pty.js');
+const ipc = require('node-ipc');
 
 module.exports = (options, callback) => {
   options.out = options.out || 'ignore';
   options.err = options.err || 'ignore';
-  options.detached = options.detached || false;
   callback = callback || (m => console.log(m));
 
-  const parameters = ['-c', options.config, '--watch', '--testResultsProcessor', './src/jest-results-processor'];
-  const runner = path.join(__dirname, 'jest-runner.js')
   const processor = path.join(__dirname, 'jest-results-processor.js')
+  const runner = path.join(__dirname, 'jest-runner.js');
 
-  console.log('🛰 ', 'jest-observer: ON - jest running in background');
+  const parameters = [
+    '-c', options.config,
+    '--watch',
+    '--testResultsProcessor', processor];
+  const spawnOptions = {
+    name: 'xterm-256color',
+    cols: process.stdout.columns,
+    rows: process.stdout.rows,
+    cwd: process.cwd(),
+    env: process.env
+  };
 
-  const child = fork(runner, ['-c', options.config, '--watch', '--testResultsProcessor', processor], {
-    detached: options.detached,
-    stdio: [ 'ignore', options.out, options.err, 'ipc' ]
-  });
+  ipc.config.id = 'jest-observer';
+  ipc.config.retry = 1500;
+  ipc.config.silent = true;
+  ipc.serve(() => ipc.server.on('jest.result', callback));
+  ipc.server.start();
 
-  child.on('message', callback);
+  const child = pty.spawn(runner, parameters, spawnOptions);
+
+  console.log('🛰 ', 'jest-observer: ON - jest running in background', child.process);
 
   return child;
 };

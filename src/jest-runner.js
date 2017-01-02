@@ -39,11 +39,11 @@ function run(argv, root) {
     if (argv && argv.forceExit) {
       process.exit(code);
     }
-    process.send('MESSAGE!')
+    // process.send('MESSAGE!')
   });
 }
 
-process.send('📡  jest: RUNNING');
+// process.send('📡  jest: RUNNING');
 
 run();
 

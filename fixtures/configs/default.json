@@ -1,0 +1,4 @@
+{
+  "testPathDirs": ["src"],
+  "testResultsProcessor": "./.scripts/utils/jest-results-processor"
+}

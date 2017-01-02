@@ -8,9 +8,7 @@ const observer = require('jest-observer');
 
 console.log('🚀 ', '~~~ start script ~~~');
 
-observer({
-  out: fs.openSync('./.log/jest-record.log', 'a'),
-  err: fs.openSync('./.log/jest-record.log', 'a'),
+const child = observer({
   config: path.join(__dirname, '../.jestrc')
 }, (results) => {
   /* results are the jest test-results */
@@ -18,3 +16,5 @@ observer({
     console.log('\n', results);
   }
 });
+
+child.on('data', data => console.log('data: ',data));
