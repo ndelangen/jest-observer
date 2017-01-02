@@ -20,7 +20,7 @@ const warnAboutUnrecognizedOptions = require('jest-util').warnAboutUnrecognizedO
 const yargs = require('yargs');
 
 function run(argv, root) {
-  argv = yargs(argv || process.argv.slice(2)).
+  argv = yargs(argv || process.argv.slice(3)).
   usage(args.usage).
   help().
   options(args.options).
@@ -43,7 +43,8 @@ function run(argv, root) {
   });
 }
 
-process.send('📡  jest: RUNNING');
+// console.log('TEST');
+process.send && process.send('📡  jest: RUNNING');
 
 run();
 
