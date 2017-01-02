@@ -10,7 +10,7 @@ module.exports = (options, callback) => {
   options.out = options.out || 'ignore';
   options.err = options.err || 'ignore';
   options.detached = options.detached || false;
-  callback = (m => console.log('callback', m));
+  callback = callback || (m => console.log('callback', m));
 
   const runner = path.join(__dirname, 'jest-runner.js')
   const processor = path.join(__dirname, 'jest-results-processor.js')
