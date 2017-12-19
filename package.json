@@ -9,7 +9,7 @@
   "author": "Norbert de Langen",
   "license": "MIT",
   "dependencies": {
-    "babel-jest": "^18.0.0",
+    "babel-jest": "^22.0.3",
     "jest-cli": "^18.0.0",
     "jest-util": "^18.0.0",
     "yargs": "^7.0.2"
