@@ -11,7 +11,7 @@
   "dependencies": {
     "babel-jest": "^18.0.0",
     "jest-cli": "^18.0.0",
-    "jest-util": "^18.0.0",
+    "jest-util": "^22.1.2",
     "yargs": "^7.0.2"
   },
   "repository": {
